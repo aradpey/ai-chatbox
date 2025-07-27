@@ -103,7 +103,7 @@ export const useChat = (sessionId: string) => {
             .map((line) => {
               try {
                 return JSON.parse(line);
-              } catch (e) {
+              } catch {
                 console.log("Failed to parse line:", line);
                 return null;
               }

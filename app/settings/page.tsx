@@ -3,7 +3,6 @@
 import PromptEditor from "./components/PromptEditor";
 import AvatarSelector from "@/components/AvatarSelector";
 import { useSettingsStore } from "@/store/settingsStore";
-import { useChatStore } from "@/store/chatStore";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Eye, EyeOff, CheckCircle, AlertCircle } from "lucide-react";
 import Link from "next/link";
@@ -53,7 +52,7 @@ const SettingsPage = () => {
     try {
       const isValid = await validateApiKey(apiKey);
       setValidationStatus(isValid ? "valid" : "invalid");
-    } catch (error) {
+    } catch {
       setValidationStatus("invalid");
     } finally {
       setIsValidating(false);

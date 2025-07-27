@@ -1,36 +1,121 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ChatAI
 
-## Getting Started
+A production-grade AI-powered chatbot web application built with Next.js 14, featuring real-time streaming responses, customizable personalities, and session management.
 
-First, run the development server:
+## Features
+
+- Real-time streaming AI responses
+- Customizable AI personalities
+- Session management with local storage
+- Dark/light theme support
+- Multi-line chat input with Shift+Enter
+- OpenAI API integration (GPT-3.5, GPT-4, GPT-4 Turbo)
+- Responsive design
+
+## Prerequisites
+
+- Node.js 18+
+- npm or yarn
+- OpenAI API key
+
+## Installation
+
+1. Clone the repository:
+
+```bash
+git clone <repository-url>
+cd oliviavibecodechallenge
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Setup
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Navigate to the Settings page
+2. Enter your OpenAI API key
+3. Configure your preferred model and settings
+4. Start chatting!
 
-## Learn More
+## Usage
 
-To learn more about Next.js, take a look at the following resources:
+- **Chat Interface**: Send messages and receive real-time AI responses
+- **Session Management**: Create, rename, and delete chat sessions
+- **Personality Customization**: Edit AI behavior in Settings
+- **Multi-line Input**: Use Shift+Enter for new lines
+- **Theme Toggle**: Switch between light and dark modes
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Tech Stack
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Next.js 14 (App Router)
+- TypeScript
+- Tailwind CSS
+- Zustand (State Management)
+- Framer Motion (Animations)
+- OpenAI API
+- shadcn/ui Components
 
-## Deploy on Vercel
+## Project Structure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
+/app
+  /chat
+    page.tsx
+    components/
+      ChatWindow.tsx
+      MessageBubble.tsx
+      InputBar.tsx
+      SessionManager.tsx
+  /settings
+    page.tsx
+    components/
+      PromptEditor.tsx
+/components
+  ThemeSwitcher.tsx
+  AvatarSelector.tsx
+/hooks
+  useChat.ts
+  useApiKey.ts
+  useLocalStorage.ts
+/store
+  chatStore.ts
+  settingsStore.ts
+/lib
+  openai.ts
+  streaming.ts
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## API Key Security
+
+Your OpenAI API key is stored securely in your browser's localStorage and is never transmitted to any server except OpenAI's API directly from your browser.
+
+## Development
+
+```bash
+# Run development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Start production server
+npm start
+
+# Run linting
+npm run lint
+```
+
+## License
+
+MIT
